@@ -5,29 +5,20 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  List names = ['Johnny', 'Bonnie', 'Todd'];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-            Container(
-              width: 350,
-              color: Colors.deepPurple,
-            ),
-            Container(
-              width: 350,
-              color: Colors.deepPurple[400],
-            ),
-            Container(
-              width: 350,
-              color: Colors.deepPurple[200],
-            )
-          ],
+        body: ListView.builder(
+          itemCount: names.length,
+          itemBuilder: (context, index) => ListTile(
+            title: Text(names[index]),
+          ),
         ),
       ),
     );
