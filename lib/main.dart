@@ -5,28 +5,47 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
-
-  // Variables
-  String name = "Hello Flutter";
-  int age = 27;
-  double pi = 3.14;
-  bool isExcited = true;
-  Set<String> uniqueStrings = {"I", "am", "alpha"};
-  List<String> strings = ["I", "am", "alpha"];
-  Map user = {"name": "Johnny"};
-
-  // Math:=-*/%
-
-  int printSomething(int number) {
-    return number;
-  }
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+      home: Scaffold(
+        backgroundColor: Colors.deepPurple[200],
+        appBar: AppBar(
+          title: Text("App Bar", style: TextStyle(color: Colors.white)),
+          backgroundColor: Colors.deepPurple,
+          elevation: 20, // shadow
+          leading: Icon(Icons.menu, color: Colors.white),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.logout),
+              color: Colors.white,
+            )
+          ],
+        ),
+        body: Center(
+          child: Container(
+            height: 300,
+            width: 300,
+            padding: EdgeInsets.all(25), // all, only, symmetric
+            // colors can go here if no decoration declared
+
+            decoration: BoxDecoration(
+              color: Colors.deepPurple,
+              borderRadius: BorderRadius.circular(20),
+            ),
+
+            child: Icon(
+              Icons.favorite,
+              color: Colors.white,
+              size: 64,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
