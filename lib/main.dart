@@ -12,38 +12,32 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.deepPurple[200],
-        appBar: AppBar(
-          title: Text("App Bar", style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.deepPurple,
-          elevation: 20, // shadow
-          leading: Icon(Icons.menu, color: Colors.white),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.logout),
-              color: Colors.white,
-            )
+        body: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // 1st box
+            Expanded(
+              child: Container(
+                color: Colors.deepPurple,
+              ),
+            ),
+
+            // 2nd box
+            Expanded(
+              flex: 3,
+              child: Container(
+                color: Colors.deepPurple[400],
+              ),
+            ),
+
+            // 3rd box
+            Expanded(
+              child: Container(
+                color: Colors.deepPurple[200],
+              ),
+            ),
           ],
-        ),
-        body: Center(
-          child: Container(
-            height: 300,
-            width: 300,
-            padding: EdgeInsets.all(25), // all, only, symmetric
-            // colors can go here if no decoration declared
-
-            decoration: BoxDecoration(
-              color: Colors.deepPurple,
-              borderRadius: BorderRadius.circular(20),
-            ),
-
-            child: Icon(
-              Icons.favorite,
-              color: Colors.white,
-              size: 64,
-            ),
-          ),
         ),
       ),
     );
