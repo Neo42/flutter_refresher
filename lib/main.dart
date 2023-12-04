@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   // Variables
-  String name = " ";
+  String name = "Hello Flutter";
+  int age = 27;
+  double pi = 3.14;
+  bool isExcited = true;
+  Set<String> uniqueStrings = {"I", "am", "alpha"};
+  List<String> strings = ["I", "am", "alpha"];
+  Map user = {"name": "Johnny"};
+
+  // Math:=-*/%
+
+  int printSomething(int number) {
+    return number;
+  }
 
   @override
   Widget build(BuildContext context) {
